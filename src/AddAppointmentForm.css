@@ -1,0 +1,467 @@
+/* Modal Styles */
+.add-appointment-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Dark Mode Modal */
+.add-appointment-modal.dark-mode {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-content {
+  background-color: white;
+  padding: 0;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: slideIn 0.3s ease-out;
+  border: 1px solid #e2e8f0;
+}
+
+/* Dark Mode Modal Content */
+.add-appointment-modal.dark-mode .modal-content {
+  background-color: #2d3748;
+  border-color: #4a5568;
+  color: #e2e8f0;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 2rem 1rem 2rem;
+  background: linear-gradient(135deg, #f8fafc, #edf2f7);
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* Dark Mode Modal Header */
+.add-appointment-modal.dark-mode .modal-header {
+  background: linear-gradient(135deg, #4a5568, #2d3748);
+  border-bottom-color: #718096;
+}
+
+.modal-header h2 {
+  margin: 0;
+  color: #2d3748;
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.add-appointment-modal.dark-mode .modal-header h2 {
+  color: #e2e8f0;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #a0aec0;
+  cursor: pointer;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.close-button:hover {
+  background-color: #f7fafc;
+  color: #4a5568;
+  transform: scale(1.1);
+}
+
+.add-appointment-modal.dark-mode .close-button:hover {
+  background-color: #4a5568;
+  color: #e2e8f0;
+}
+
+.appointment-date {
+  text-align: center;
+  margin: 1.5rem 2rem;
+  padding: 1rem;
+  background: linear-gradient(135deg, #ebf8ff, #dbeafe);
+  border-radius: 8px;
+  color: #2c5282;
+  border-left: 4px solid #4299e1;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.add-appointment-modal.dark-mode .appointment-date {
+  background: linear-gradient(135deg, #2c5282, #2b6cb0);
+  color: #bee3f8;
+  border-left-color: #63b3ed;
+}
+
+/* Form Container */
+form {
+  padding: 0 2rem 2rem 2rem;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #4a5568;
+  font-size: 0.95rem;
+}
+
+.add-appointment-modal.dark-mode .form-group label {
+  color: #e2e8f0;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.875rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: white;
+}
+
+.add-appointment-modal.dark-mode .form-group input,
+.add-appointment-modal.dark-mode .form-group select,
+.add-appointment-modal.dark-mode .form-group textarea {
+  background-color: #4a5568;
+  border-color: #718096;
+  color: #e2e8f0;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #4299e1;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.1);
+}
+
+.form-group input:hover,
+.form-group select:hover,
+.form-group textarea:hover {
+  border-color: #cbd5e0;
+}
+
+.add-appointment-modal.dark-mode .form-group input:hover,
+.add-appointment-modal.dark-mode .form-group select:hover,
+.add-appointment-modal.dark-mode .form-group textarea:hover {
+  border-color: #a0aec0;
+}
+
+.form-group textarea {
+  min-height: 100px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.form-group select {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 0.75rem center;
+  background-repeat: no-repeat;
+  background-size: 1.5em 1.5em;
+  padding-right: 3rem;
+  appearance: none;
+}
+
+.add-appointment-modal.dark-mode .form-group select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23e2e8f0' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+}
+
+/* Time input specific styles */
+.form-group input[type="time"] {
+  cursor: pointer;
+}
+
+.form-group input[type="time"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  filter: invert(0.5);
+  margin-left: 0.5rem;
+}
+
+.add-appointment-modal.dark-mode .form-group input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.8);
+}
+
+/* Error Styles */
+.form-group .error {
+  border-color: #e53e3e;
+  background-color: #fef5f5;
+  box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.1);
+}
+
+.add-appointment-modal.dark-mode .form-group .error {
+  background-color: #742a2a;
+  border-color: #fc8181;
+}
+
+.error-message {
+  display: block;
+  color: #e53e3e;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.add-appointment-modal.dark-mode .error-message {
+  color: #fc8181;
+}
+
+.error-message::before {
+  content: "⚠️";
+  margin-right: 0.5rem;
+}
+
+/* Form Actions */
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.add-appointment-modal.dark-mode .form-actions {
+  border-top-color: #718096;
+}
+
+.cancel-button,
+.save-button {
+  flex: 1;
+  padding: 0.875rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  font-family: inherit;
+}
+
+.cancel-button {
+  background-color: #f7fafc;
+  color: #4a5568;
+  border: 2px solid #e2e8f0;
+}
+
+.add-appointment-modal.dark-mode .cancel-button {
+  background-color: #4a5568;
+  color: #e2e8f0;
+  border-color: #718096;
+}
+
+.cancel-button:hover {
+  background-color: #edf2f7;
+  border-color: #cbd5e0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.add-appointment-modal.dark-mode .cancel-button:hover {
+  background-color: #718096;
+  border-color: #a0aec0;
+}
+
+.save-button {
+  background: linear-gradient(135deg, #4299e1, #3182ce);
+  color: white;
+  border: 2px solid #4299e1;
+}
+
+.save-button:hover {
+  background: linear-gradient(135deg, #3182ce, #2c5282);
+  border-color: #3182ce;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(66, 153, 225, 0.4);
+}
+
+.save-button:active,
+.cancel-button:active {
+  transform: translateY(0);
+}
+
+/* Loading state */
+.save-button:disabled {
+  background: #a0aec0;
+  border-color: #a0aec0;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.save-button:disabled:hover {
+  background: #a0aec0;
+  border-color: #a0aec0;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .modal-content {
+    margin: 1rem;
+    width: calc(100% - 2rem);
+    border-radius: 8px;
+  }
+
+  .modal-header {
+    padding: 1.5rem 1.5rem 1rem 1.5rem;
+  }
+
+  .modal-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .appointment-date {
+    margin: 1rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  form {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+  }
+  
+  .cancel-button,
+  .save-button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-content {
+    margin: 0.5rem;
+    width: calc(100% - 1rem);
+  }
+
+  .modal-header {
+    padding: 1rem;
+  }
+
+  .modal-header h2 {
+    font-size: 1.25rem;
+  }
+
+  form {
+    padding: 0 1rem 1rem 1rem;
+  }
+
+  .appointment-date {
+    margin: 1rem;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .modal-content,
+  .add-appointment-modal {
+    animation: none;
+  }
+  
+  .cancel-button:hover,
+  .save-button:hover,
+  .close-button:hover {
+    transform: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    border-width: 3px;
+  }
+  
+  .save-button {
+    border-width: 3px;
+  }
+
+  .error-message {
+    font-weight: 700;
+  }
+}
+
+/* Focus styles for better accessibility */
+.cancel-button:focus,
+.save-button:focus,
+.close-button:focus {
+  outline: 2px solid #4299e1;
+  outline-offset: 2px;
+}
+
+/* Scrollbar styling for form content */
+form::-webkit-scrollbar {
+  width: 6px;
+}
+
+form::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 3px;
+}
+
+form::-webkit-scrollbar-thumb {
+  background: #cbd5e0;
+  border-radius: 3px;
+}
+
+form::-webkit-scrollbar-thumb:hover {
+  background: #a0aec0;
+}
